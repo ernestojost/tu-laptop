@@ -1,0 +1,288 @@
+/* FUENTES */
+@font-face {
+    font-family: "Muli";
+    src: url("fonts/Muli-Regular.ttf") format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Muli-Black";
+    src: url("fonts/Muli-Black.ttf") format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "WebSymbols";
+    src: url("fonts/WebSymbols-Regular.otf") format('opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/* ESTILOS GENERALES */
+*{
+    font-family: Muli;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+/* CABECERA */
+#text-search{
+    background-color: #efefef;
+    width: 350px !important;
+}
+
+::placeholder {
+    color: #9A9A9A !important;
+}
+
+.form-control:focus{
+    border: 1px solid #571f87;
+    box-shadow: none;
+}
+
+#button-search{
+    outline: none;
+    background: linear-gradient(to bottom right, rgba(70,26,126,1), rgba(5,151,188,1));
+}
+
+#button-search:hover{
+    background: #571f87;
+    transition: none;
+}
+
+#button-search:focus{
+    background: #571f87;
+    border: 1px solid #571f87;
+    box-shadow: none;
+}
+
+.nav-link{
+    text-transform: uppercase;
+}
+
+#account{
+    padding-left: 25px;
+}
+
+#account, #shop{
+    color: #571f87;
+    font-size: 10px;
+}
+
+#account div{
+    background: url('../img/accountNormal.svg');
+}
+
+#shop .imagen{
+    background-image: url('../img/shopNormal.svg');
+}
+
+#account img, #shop img{
+    width: 20px;
+    height: 20px;
+    margin-right: 7px;
+}
+
+#account:hover, #shop:hover{
+    color: #3480DD;
+}
+
+#account:hover .imagen{
+    background-image: url("../img/accountHover.svg");
+}
+
+
+
+/* MENU */
+.navbar-nav > .nav-item > .nav-link{
+    font-size: 14px;
+    transition: 0.5s;
+}
+
+.navbar-nav > .nav-item:hover > .nav-link{
+    color: #3480DD !important;
+    transition: 0.5s;
+    box-shadow: inset 0px -2px #3480DD;
+}
+
+#navbarNav li a{
+    width: max-content;
+}
+
+
+/* PRODUCTO DESTACADOS, OFERTAS IMPERDIBLES, NOVEDADES */
+.carousel-control-size{
+    width: 35px;
+    height: 50px;
+}
+
+#featured-products,
+#news-products,
+#offers-products{
+    font-family: Muli-Black;
+    font-size: 18px;
+    color: #571f87;
+}
+
+#carousel-featured .carousel-item a div,
+#carousel-news .carousel-item a div,
+#carousel-offers .carousel-item a div{
+    max-width: 200px;
+    height: 180px;
+}
+
+#carousel-featured .carousel-item a p,
+#carousel-news .carousel-item a p,
+#carousel-offers .carousel-item a p{
+    height: 43px;
+    overflow: hidden;
+    font-size: 14px;
+    font-weight: bold;
+    color: #571f87;
+}
+
+.w-20{
+    width: 20%;
+}
+
+
+
+/* FOOTER */
+.title-footer{
+    font-size: 13px;
+    color: #571f87;
+}
+
+footer a{
+    font-size: 14px;
+}
+
+footer .text-secondary{
+    font-size: 10px;
+}
+
+footer .text-dark:hover{
+    color: #3480DD !important;
+}
+
+.font-family-websymbols{
+    font-family: WebSymbols;
+}
+
+footer .payment-methods-size{
+    max-width: 50px;
+    height: 30px;
+    padding: 5px;
+}
+
+
+
+
+/* RESPONSIVE */
+@media (max-width: 1280px){
+    
+    /* CABECERA */
+    #text-search{
+        width: 280px !important;
+    }
+}
+
+@media (max-width: 1024px){
+    
+    /* CABECERA */
+    #header{
+        margin: 0px !important;
+        padding: 0px;
+    }
+    
+    #carouselHome-content{
+        max-width: 100%;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    
+    #text-search,
+    #button-search{
+        display: none;
+    }
+    
+    header{
+        max-width: 100% !important;
+    }
+}
+
+@media (max-width: 1024px){
+    
+    /* CABECERA */
+    #account{
+        padding: 0px;
+    }
+    
+    #account span,
+    #shop span{
+        display: none;
+    }
+    
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+    
+    #carousel-featured .carousel-item > div,
+    #carousel-offers .carousel-item > div,
+    #carousel-news .carousel-item > div{
+        flex-wrap: wrap !important;
+    }
+    
+    #carousel-featured .carousel-item a,
+    #carousel-offers .carousel-item a,
+    #carousel-news .carousel-item a{
+        width: 50% !important;
+    }
+    
+    /* FOOTER */
+    footer > div{
+        flex-direction: column !important;
+    }
+    
+    footer #company{
+        display: none;
+    }
+    
+    footer #social{
+        margin-bottom: 20px;
+    }
+    
+    footer #social,
+    footer #payment-methods{
+        text-align: center;
+    }
+    
+    footer #social p,
+    footer #payment-methods p{
+        display: none;
+    }
+    
+}
+
+@media (max-width: 575px) {
+    
+    /* PRODUCTOS DESTACADOS */
+    #featured-products-content,
+    #offers-products-content,
+    #news-products-content{
+        margin-top: 20px !important;
+    }
+    
+    /* CONTENIDO PRINCIPAL */
+    #principal-content{
+        padding-bottom: 20px !important;
+    }
+    
+}
