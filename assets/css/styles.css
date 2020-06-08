@@ -70,6 +70,10 @@
     padding-left: 25px;
 }
 
+#account:focus{
+    outline: 0 none;
+}
+
 #account, #shop{
     color: #571f87;
     font-size: 10px;
@@ -180,6 +184,48 @@ footer .payment-methods-size{
     height: 30px;
     padding: 5px;
 }
+
+
+
+/* LOGIN ACCOUNT */
+#login-account{
+    display: none !important;
+    top: 0px;
+    left: 0px;
+    height: 485px;
+    background: rgba(0,0,0,0.3);
+    align-items: center;
+    justify-content: center;
+}
+
+#login-account-content{
+    padding: 25px;
+    width: 400px;
+}
+
+#login-account-close{
+    margin-top: -18px;
+    margin-right: -18px;
+}
+
+#login-account-content label{
+    font-size: 12px;
+}
+
+.font-size-13{
+    font-size: 13px;
+}
+
+#login-enter{
+    background: #571f87;
+    border: none;
+}
+
+#login-enter:hover{
+    background: #6b339a;
+}
+
+
 
 
 
