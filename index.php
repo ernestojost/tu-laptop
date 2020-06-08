@@ -32,7 +32,7 @@
                             <img id="imgAccount" src="./assets/img/accountNormal.svg"/>
                             <span>Mi cuenta</span>
                         </button>
-                        <a id="shop" class="nav-link d-inline align-middle" href="#" onmouseover="changeIconHover('shop')" onmouseout="changeIconNormal('shop')">
+                        <a id="shop" class="nav-link d-inline align-middle" href="#" onmouseover="changeIconHover('shop')" onmouseout="changeIconNormal('shop')" onclick="changeVisibilityShoppingCart(true)">
                             <img id="imgShop" src="./assets/img/shopNormal.svg"/>
                             <span><strong>USD 0,00</strong></span>
                         </a>
@@ -489,19 +489,56 @@
         <div id="login-account" class="position-absolute w-100 h-100 d-none">
             <div id="login-account-content" class="bg-white">
                 <button id="login-account-close" class="btn font-family-websymbols font-size-13 float-right text-dark" onclick="changeVisibilityLogin(false)">'</button>
-                <form>
+                <form id="login-form">
                     <div class="form-group">
-                        <label class="font-weight-bold" for="exampleInputEmail1">Correo electrónico</label>
+                        <label class="font-weight-bold" for="email-login">Correo electrónico</label>
                         <input type="email" class="form-control" id="email-login" aria-describedby="emailHelp">
                     </div>
                     <div class="form-group">
-                        <label class="font-weight-bold" for="exampleInputPassword1">Contraseña</label>
+                        <label class="font-weight-bold" for="password-login">Contraseña</label>
                         <input type="password" class="form-control" id="password-login">
                     </div>
+                    <div class="alert alert-danger font-size-13 d-none" role="alert"></div>
                     <button id="login-enter" type="submit" class="btn mt-4 w-100 rounded-0 text-white text-uppercase font-size-13 p-2 font-weight-bold shadow-none">Ingresar</button>
+                    <p class="mt-3">
+                        No soy usuario registrado y quiero <a id="openCreateAccount" class="cursor-pointer">crear una cuenta</a>.
+                    </p>
+                </form>
+                <form id="create-account-form" class="d-none">
+                    <div class="form-group">
+                        <label class="font-weight-bold" for="name-create-account">Nombre</label>
+                        <input type="text" class="form-control" id="name-create-account">
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-bold" for="surname-create-account">Apellido</label>
+                        <input type="text" class="form-control" id="surname-create-account">
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-bold" for="email-create-account">Correo electrónico</label>
+                        <input type="email" class="form-control" id="email-create-account" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-bold" for="password-create-account">Contraseña</label>
+                        <input type="password" class="form-control" id="password-create-account">
+                    </div>
+                    <p>
+                        La contraseña debe contener como mínimo 8 caracteres de largo.
+                    </p>
+                    <div class="alert alert-danger font-size-13 d-none" role="alert"></div>
+                    <button id="create-account" type="submit" class="btn mt-4 w-100 rounded-0 text-white text-uppercase font-size-13 p-2 font-weight-bold shadow-none">Crear cuenta</button>
+                    <p class="mt-3">
+                        Si ya tienes una cuenta <a id="closeCreateAccount" class="cursor-pointer">ingresa aquí</a>.
+                    </p>
                 </form>
             </div>
         </div>
+        <div id="shopping-cart" class="position-absolute w-100 h-100 d-none">
+            <div id="shopping-cart-content" class="bg-white">
+                <button id="shopping-cart-close" class="btn font-family-websymbols font-size-13 float-right text-dark" onclick="changeVisibilityShoppingCart(false)">'</button>
+            </div>
+        </div>
+
+
         <!-- Bootstrap -->
         <script type="text/javascript" src="jquery/jquery-3.5.1.min.js"></script>
         <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>

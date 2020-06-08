@@ -40,8 +40,10 @@ descripcion     text,
 precio          float(100,2) not null,
 stock           int(255) not null,
 oferta          varchar(2),
+precio_oferta   float(100,2),
 fecha           date not null,
 imagen          varchar(255),
+destacado       boolean not null,
 CONSTRAINT pk_categorias PRIMARY KEY(id),
 CONSTRAINT fk_producto_categoria FOREIGN KEY(categoria_id) REFERENCES categorias(id)
 )ENGINE=InnoDb;
