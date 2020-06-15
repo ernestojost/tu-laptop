@@ -299,24 +299,19 @@ footer .payment-methods-size{
     #button-search{
         display: none;
     }
-    
-    header{
-        max-width: 100% !important;
-    }
-}
 
-@media (max-width: 1024px){
-    
-    /* CABECERA */
     #account{
         padding: 0px;
     }
-    
+
     #account span,
     #shop span{
         display: none;
     }
     
+    header{
+        max-width: 100% !important;
+    }
 }
 
 /* TABLET */

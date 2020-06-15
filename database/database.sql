@@ -1,5 +1,5 @@
-CREATE DATABASE tu_tienda;
-USE tu_tienda;
+CREATE DATABASE tu_laptop;
+USE tu_laptop;
 
 CREATE TABLE usuarios(
 id              int(255) auto_increment not null,
@@ -13,7 +13,7 @@ CONSTRAINT pk_usuarios PRIMARY KEY(id),
 CONSTRAINT uq_email UNIQUE(email)  
 )ENGINE=InnoDb;
 
-INSERT INTO usuarios VALUES(NULL, 'Admin', 'Admin', 'admin@admin.com', 'password', 'admin', null);
+INSERT INTO usuarios VALUES(NULL, 'Admin', 'Admin', 'admin@admin.com', 'contraseña', 'admin', null);
 
 CREATE TABLE categorias(
 id              int(255) auto_increment not null,
@@ -40,11 +40,10 @@ descripcion     text,
 precio          float(100,2) not null,
 stock           int(255) not null,
 oferta          varchar(2),
-precio_oferta   float(100,2),
 fecha           date not null,
 imagen          varchar(255),
-destacado       boolean not null,
-CONSTRAINT pk_categorias PRIMARY KEY(id),
+destacado       varchar(2),
+CONSTRAINT pk_productos PRIMARY KEY(id),
 CONSTRAINT fk_producto_categoria FOREIGN KEY(categoria_id) REFERENCES categorias(id)
 )ENGINE=InnoDb;
 
@@ -61,7 +60,6 @@ hora            time,
 CONSTRAINT pk_pedidos PRIMARY KEY(id),
 CONSTRAINT fk_pedido_usuario FOREIGN KEY(usuario_id) REFERENCES usuarios(id)
 )ENGINE=InnoDb;
-
 
 CREATE TABLE lineas_pedidos(
 id              int(255) auto_increment not null,

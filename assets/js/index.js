@@ -24,13 +24,25 @@ window.addEventListener('load', () => {
     document.getElementById("openCreateAccount").addEventListener("click", function () {
         document.getElementById('login-form').style.setProperty('display', 'none', 'important');
         document.getElementById('create-account-form').style.setProperty('display', 'block', 'important');
+        document.getElementById('email-login').value = "";
+        document.getElementById('password-login').value = "";
     }, false);
     
     // Cerrar crear cuenta
     document.getElementById("closeCreateAccount").addEventListener("click", function () {
         document.getElementById('create-account-form').style.setProperty('display', 'none', 'important');
         document.getElementById('login-form').style.setProperty('display', 'block', 'important');
+        document.getElementById('name-create-account').value = "";
+        document.getElementById('surname-create-account').value = "";
+        document.getElementById('email-create-account').value = "";
+        document.getElementById('password-create-account').value = "";
     }, false);
+
+
+    // Login Ingresar
+    document.getElementById("login-enter").addEventListener("click", function(){
+        console.log("1");
+    }, false)
 
 });
 
@@ -54,6 +66,17 @@ function changeVisibilityLogin(bool) {
         enableScroll();
         document.getElementById('login-account').style.setProperty('display', 'none', 'important');
         document.getElementsByTagName("html")[0].style.overflow = "auto";  // Habilitar barra scroll
+        if(document.getElementById('login-form').style.display == "none"){
+            document.getElementById('login-form').style.setProperty('display', 'block', 'important');
+            document.getElementById('create-account-form').style.setProperty('display', 'none', 'important');
+            document.getElementById('name-create-account').value = "";
+            document.getElementById('surname-create-account').value = "";
+            document.getElementById('email-create-account').value = "";
+            document.getElementById('password-create-account').value = "";
+        }else{
+            document.getElementById('email-login').value = "";
+            document.getElementById('password-login').value = "";
+        }
     }
 }
 
@@ -115,3 +138,6 @@ function enableScroll() {
 }
 
 /* FIN DESHABILITAR Y HABILITAR SCROLL */
+
+
+
