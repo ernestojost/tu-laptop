@@ -298,6 +298,70 @@ footer .payment-methods-size{
 
 
 
+
+
+
+
+
+
+
+/* CATEGORIA */
+#category-name{
+    font-size: 16px !important;
+    font-weight: bold;
+    color: #571f87;
+}
+
+#category > div{
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#category a{
+    width: 200px;
+    padding: 8px;
+}
+
+#category a img{
+    max-width: 200px;
+    height: 180px;
+}
+
+#category a > p{
+    height: 43px;
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+#category a .prices{
+    height: 55px;
+    text-align: center;
+}
+
+#category a .normal-price{
+    margin-bottom: 0px;
+    color: #571f87;
+    font-weight: bold;
+    font-size: 14px !important;
+}
+
+#category a .old-price{
+    font-size: 12px;
+    margin-bottom: 16px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
 /* RESPONSIVE */
 @media (max-width: 1280px){
     

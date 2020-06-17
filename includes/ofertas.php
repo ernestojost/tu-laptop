@@ -23,7 +23,7 @@
                                 <?php
                                 $seAgregaronDivInicial = true;
                             endif;
-                            if ((($contadorCantidadOfertas == 5) || ($contadorCantidadOfertas == 9)) && (!$seAgregaronDivInicial) && ($producto['precio_oferta'] != "0.00")):
+                            if ((($contadorCantidadOfertas == 5) || ($contadorCantidadOfertas == 9)) && (!$seAgregaronDivInicial) && ($producto['precio_oferta'] != "0.00") && ($producto['stock'] != 0)):
                                 ?>
                                 <div class="carousel-item">
                                     <div class="mx-5 my-3 d-flex justify-content-around">
@@ -32,7 +32,7 @@
                                         $seAgregaronDivFinal = false;
                                     endif;
 
-                                    if ($producto['precio_oferta'] != "0.00"):
+                                    if (($producto['precio_oferta'] != "0.00") && ($producto['stock'] != 0)):
                                         ?>
 
                                         <a class="w-20 text-decoration-none" href="#" type="button">

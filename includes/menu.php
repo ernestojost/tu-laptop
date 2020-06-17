@@ -13,7 +13,7 @@
                     ?>
 
                     <li class="nav-item">
-                        <a class="nav-link text-dark py-3" href="#"><strong><?= $categoria['nombre'] ?></strong></a>
+                        <a class="nav-link text-dark py-3" href="categoria.php?id=<?=$categoria['id']?>"><strong><?= $categoria['nombre'] ?></strong></a>
                     </li>
 
                     <?php

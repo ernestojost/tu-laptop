@@ -22,7 +22,7 @@
                                 <?php
                                 $seAgregaronDivInicial = true;
                             endif;
-                            if ((($contadorCantidadDestacados == 5) || ($contadorCantidadDestacados == 9)) && (!$seAgregaronDivInicial) && ($producto['destacado'] == "si")):
+                            if ((($contadorCantidadDestacados == 5) || ($contadorCantidadDestacados == 9)) && (!$seAgregaronDivInicial) && ($producto['destacado'] == "si") && ($producto['stock'] != 0)):
                                 ?>
                                 <div class="carousel-item">
                                     <div class="mx-5 my-3 d-flex justify-content-around">
@@ -31,7 +31,7 @@
                                         $seAgregaronDivFinal = false;
                                     endif;
 
-                                    if ($producto['destacado'] == "si"):
+                                    if (($producto['destacado'] == "si") && ($producto['stock'] != 0)):
                                         ?>
 
                                         <a class="w-20 text-decoration-none" href="#" type="button">
