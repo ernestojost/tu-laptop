@@ -151,9 +151,9 @@
     color: #571f87;
 }
 
-#carousel-featured .carousel-item a div,
-#carousel-news .carousel-item a div,
-#carousel-offers .carousel-item a div{
+#carousel-featured .carousel-item a > div,
+#carousel-news .carousel-item a > div,
+#carousel-offers .carousel-item a > div{
     max-width: 200px;
     height: 180px;
 }
@@ -161,10 +161,36 @@
 #carousel-featured .carousel-item a p,
 #carousel-news .carousel-item a p,
 #carousel-offers .carousel-item a p{
-    height: 43px;
-    overflow: hidden;
+    text-align: center;
     font-size: 14px;
     font-weight: bold;
+}
+
+#carousel-featured .carousel-item a .prices,
+#carousel-news .carousel-item a .prices,
+#carousel-offers .carousel-item a .prices{
+    height: 55px;
+}
+
+#carousel-featured .carousel-item a .name-product,
+#carousel-news .carousel-item a .name-product,
+#carousel-offers .carousel-item a .name-product{
+    height: 43px !important;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+#carousel-featured .carousel-item a .old-price,
+#carousel-news .carousel-item a .old-price,
+#carousel-offers .carousel-item a .old-price{
+    font-size: 12px;
+    margin-bottom: 16px;
+}
+
+#carousel-featured .carousel-item a .normal-price,
+#carousel-news .carousel-item a .normal-price,
+#carousel-offers .carousel-item a .normal-price{
+    margin-bottom: 0px;
     color: #571f87;
 }
 

@@ -4,30 +4,31 @@
     <hr class="m-0"/>
     <div id="carousel-featured" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-
             <?php
             $productos = conseguirProductos($db);
 
-            // Si hay al menos un producto como destacado
+            // Si hay al menos un producto
             if (!empty($productos)):
                 $contadorCantidadDestacados = 1;
-                $seAgregoDestacado = false; // Es true si se agregaron los primeros 2 div del carousel-item
+                $seAgregaronDivInicial = false; // Es true si se agregaron los primeros 2 div del carousel-item
+                $seAgregaronDivFinal = false; // Es true si se agregaron los ultimos 2 div del carousel-item
                 // Si todavía hay productos y van menos de 12 productos destacados
-                while (($producto = mysqli_fetch_assoc($productos)) && ($contadorCantidadDestacados <= 12)): // Máximo de 3 páginas en el carousel
+                while (($producto = mysqli_fetch_assoc($productos)) && ($contadorCantidadDestacados <= 12)): // Máximo de 12 productos en el carousel
 
-                    if (($contadorCantidadDestacados == 1) && (!$seAgregoDestacado)):
+                    if (($contadorCantidadDestacados == 1) && (!$seAgregaronDivInicial)):
                         ?>
                         <div class="carousel-item active">
                             <div class="mx-5 my-3 d-flex justify-content-around">
                                 <?php
-                                $seAgregoDestacado = true;
+                                $seAgregaronDivInicial = true;
                             endif;
-                            if ((($contadorCantidadDestacados == 5) || ($contadorCantidadDestacados == 9)) && (!$seAgregoDestacado)):
-                                $seAgregoDestacado = true;
+                            if ((($contadorCantidadDestacados == 5) || ($contadorCantidadDestacados == 9)) && (!$seAgregaronDivInicial) && ($producto['destacado'] == "si")):
                                 ?>
                                 <div class="carousel-item">
                                     <div class="mx-5 my-3 d-flex justify-content-around">
                                         <?php
+                                        $seAgregaronDivInicial = true;
+                                        $seAgregaronDivFinal = false;
                                     endif;
 
                                     if ($producto['destacado'] == "si"):
@@ -35,24 +36,38 @@
 
                                         <a class="w-20 text-decoration-none" href="#" type="button">
                                             <div class="d-flex p-0 mx-auto">
-                                                <img class="align-self-center d-block mh-100 mw-100" src="<?= $producto['imagen'] ?>" alt="<?= $producto['nombre'] ?>">
+                                                <img class="align-self-center d-block mh-100 mw-100 mx-auto" src="<?= $producto['imagen'] ?>" alt="<?= $producto['nombre'] ?>">
                                             </div>
-                                            <p class="text-center mx-auto text-dark"><?= $producto['nombre'] ?></p>
-                                            <p class="text-center">USD <?= $producto['precio'] ?></p>
+                                            <p class="name-product text-center mx-auto text-dark"><?= $producto['nombre'] ?></p>
+                                            <div class="prices">
+                                                <?php
+                                                if ($producto['precio_oferta'] != "0.00"):
+                                                    ?>
+                                                    <p class="normal-price">USD <?= $producto['precio_oferta'] ?></p>
+                                                    <p class="old-price text-muted"><s>USD <?= $producto['precio'] ?></s></p>
+                                                    <?php
+                                                else:
+                                                    ?>
+                                                    <p class="normal-price">USD <?= $producto['precio'] ?></p>
+                                                <?php
+                                                endif;
+                                                ?>
+                                            </div>
                                         </a>
 
                                         <?php
                                         $contadorCantidadDestacados++;
                                     endif;
-                                    if (($contadorCantidadDestacados == 5) || ($contadorCantidadDestacados == 9) || ($contadorCantidadDestacados == 13)):
-                                        $seAgregoDestacado = false;
+                                    if ((($contadorCantidadDestacados == 5) || ($contadorCantidadDestacados == 9) || ($contadorCantidadDestacados == 13)) && (!$seAgregaronDivFinal)):
                                         ?>
                                     </div>
                                 </div>
                                 <?php
+                                $seAgregaronDivInicial = false;
+                                $seAgregaronDivFinal = true;
                             endif;
                         endwhile;
-                        if (($contadorCantidadDestacados != 5) && ($contadorCantidadDestacados != 9) && ($contadorCantidadDestacados != 13)):
+                        if (!$seAgregaronDivFinal):
                             ?>
                         </div>
                     </div>
