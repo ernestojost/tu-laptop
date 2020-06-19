@@ -433,6 +433,21 @@ footer .payment-methods-size{
 
 
 
+/* CONTACTO */
+#contact #contact-title{
+    color: #571f87;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
 
 
 /* RESPONSIVE */
@@ -494,6 +509,20 @@ footer .payment-methods-size{
         align-content: center;
     }
     
+    #product img{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #product #product-name{
+        text-align: center
+    }
+    
+    #product #product-price,
+    #product #shop-buttons{
+        justify-content: center;
+    }
+    
 }
 
 
@@ -551,4 +580,23 @@ footer .payment-methods-size{
         padding-bottom: 20px !important;
     }
     
+}
+
+@media (max-width: 378px) {
+
+    /* PRODUCTO */
+    #product img{
+        width: 100%;
+    }
+
+    #product #shop-buttons{
+        flex-direction: column;
+    }
+
+    #product #shop-buttons .dropdown{
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 12px;
+    }
+
 }
