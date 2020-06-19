@@ -17,10 +17,10 @@ if (!isset($categoria_actual['id'])) {
         <div class="d-flex">
             <?php
             $productos = conseguirProductos($db);
-            while ($producto = mysqli_fetch_assoc($productos)): // Máximo de 12 productos en el carousel
+            while ($producto = mysqli_fetch_assoc($productos)):
                 if (($_GET['id'] == $producto['categoria_id']) && ($producto['stock'] != 0)):
                     ?>
-                    <a class="w-20 text-decoration-none bg-white border my-2" href="#" type="button">
+                    <a class="w-20 text-decoration-none bg-white border my-2" href="producto.php?id=<?=$producto['id']?>" type="button">
                         <div class="d-flex p-0 mx-auto">
                             <img class="align-self-center d-block mh-100 mw-100 mx-auto" src="<?= $producto['imagen'] ?>" alt="<?= $producto['nombre'] ?>">
                         </div>

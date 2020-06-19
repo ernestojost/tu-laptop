@@ -362,6 +362,79 @@ footer .payment-methods-size{
 
 
 
+
+/* PRODUCTO */
+#product > div{
+    justify-content: center;
+}
+
+#product img{
+    width: 400px;
+    margin-right: 20px;
+}
+
+#product #product-name{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#product .normal-product-price{
+    font-size: 22px;
+    color: #571f87;
+    font-weight: bold;
+}
+
+#product .old-product-price{
+    align-self: flex-end
+}
+
+#product #product-buy{
+    outline: none;
+    background: linear-gradient(to bottom right, rgba(70,26,126,1), rgba(5,151,188,1));
+    color: white;
+    border: 0px;
+}
+
+#product #product-buy:hover{
+    background: #571f87;
+    transition: none;
+}
+
+#product #product-buy:focus{
+    background: #571f87;
+    box-shadow: none;
+}
+
+#product .dropdown-menu{
+    min-width: 104px !important;
+    padding: 4px;
+}
+
+#product .dropdown-menu .dropdown-item{
+    text-align: center;
+}
+
+#product #featured h3{
+    font-size: 14px;
+    text-align: center;
+    color: #571f87;
+    font-weight: bold;
+}
+
+#product #featured p{
+    font-size: 18px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
 /* RESPONSIVE */
 @media (max-width: 1280px){
     

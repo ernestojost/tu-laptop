@@ -42,7 +42,17 @@ window.addEventListener('load', () => {
     // Login Ingresar
     document.getElementById("login-enter").addEventListener("click", function(){
         console.log("1");
-    }, false)
+    }, false);
+    
+    
+    // Producto
+    var configBoton = function() {
+        console.log("TOCA");
+    };
+    
+    for (var i = 0; i < 10; i++) {
+        document.getElementsByClassName("dropdown-item")[i].addEventListener('click', configBoton, false);
+    }
 
 });
 

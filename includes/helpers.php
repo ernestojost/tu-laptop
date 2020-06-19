@@ -55,7 +55,7 @@ function conseguirCategoria($conexion, $id) {
 }
 
 function conseguirProducto($conexion, $id) {
-    $sql = "SELECT p.*, c.nombre AS 'categoria', CONCAT(u.nombre, ' ', u.apellidos) AS usuario ". 
+    $sql = "SELECT p.*, c.nombre AS 'categoria' ". 
             "FROM productos p " .
             "INNER JOIN categorias c ON p.categoria_id = c.id " .
             "WHERE p.id = $id;";
