@@ -44,15 +44,6 @@ window.addEventListener('load', () => {
         console.log("1");
     }, false);
     
-    
-    // Producto
-    var configBoton = function() {
-        console.log("TOCA");
-    };
-    
-    for (var i = 0; i < 10; i++) {
-        document.getElementsByClassName("dropdown-item")[i].addEventListener('click', configBoton, false);
-    }
 
 });
 
@@ -151,3 +142,7 @@ function enableScroll() {
 
 
 
+/* PRODUCTO */
+function changeQuantity(quantity){
+    document.getElementById("quantity").innerHTML = quantity;
+}

@@ -37,16 +37,16 @@ if (!isset($producto_actual['id'])) {
                         <p id="quantity" class="float-left m-0 text-dark mr-2">1</p>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item">1</a>
-                        <a class="dropdown-item">2</a>
-                        <a class="dropdown-item">3</a>
-                        <a class="dropdown-item">4</a>
-                        <a class="dropdown-item">5</a>
-                        <a class="dropdown-item">6</a>
-                        <a class="dropdown-item">7</a>
-                        <a class="dropdown-item">8</a>
-                        <a class="dropdown-item">9</a>
-                        <a class="dropdown-item">10</a>
+                        <a class="dropdown-item" onclick="changeQuantity(1)">1</a>
+                        <a class="dropdown-item" onclick="changeQuantity(2)">2</a>
+                        <a class="dropdown-item" onclick="changeQuantity(3)">3</a>
+                        <a class="dropdown-item" onclick="changeQuantity(4)">4</a>
+                        <a class="dropdown-item" onclick="changeQuantity(5)">5</a>
+                        <a class="dropdown-item" onclick="changeQuantity(6)">6</a>
+                        <a class="dropdown-item" onclick="changeQuantity(7)">7</a>
+                        <a class="dropdown-item" onclick="changeQuantity(8)">8</a>
+                        <a class="dropdown-item" onclick="changeQuantity(9)">9</a>
+                        <a class="dropdown-item" onclick="changeQuantity(10)">10</a>
                     </div>
                 </div>
                 <button id="product-buy" class="float-left font-weight-bold px-5 py-3"><span class="font-family-websymbols mr-2">,</span>COMPRAR</button>

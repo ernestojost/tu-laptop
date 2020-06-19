@@ -3,17 +3,17 @@
     <div id="carouselHome" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <a href="#" type="button">
+                <a href="categoria.php?id=1" type="button">
                     <img class="d-block w-100" src="./assets/img/1.jpg" alt="First slide">
                 </a>
             </div>
             <div class="carousel-item">
-                <a href="#" type="button">
+                <a href="categoria.php?id=4" type="button">
                     <img class="d-block w-100" src="./assets/img/2.jpg" alt="Second slide">
                 </a>
             </div>
             <div class="carousel-item">
-                <a href="#" type="button">
+                <a href="categoria.php?id=3" type="button">
                     <img class="d-block w-100" src="./assets/img/3.jpg" alt="Third slide">
                 </a>
             </div>

@@ -32,7 +32,7 @@
                                     endif;
                                         ?>
 
-                                        <a class="w-20 text-decoration-none" href="#" type="button">
+                                        <a class="w-20 text-decoration-none" href="producto.php?id=<?=$producto['id']?>" type="button">
                                             <div class="d-flex p-0 mx-auto">
                                                 <img class="align-self-center d-block mh-100 mw-100 mx-auto" src="<?= $producto['imagen'] ?>" alt="<?= $producto['nombre'] ?>">
                                             </div>

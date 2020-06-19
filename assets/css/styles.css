@@ -442,6 +442,7 @@ footer .payment-methods-size{
     #text-search{
         width: 280px !important;
     }
+    
 }
 
 @media (max-width: 1024px){
@@ -475,7 +476,26 @@ footer .payment-methods-size{
     header{
         max-width: 100% !important;
     }
+    
+    /* PRODUCTO */
+    #product img{
+        width: 350px;
+    }
+    
 }
+
+
+@media (max-width: 820px) {
+    
+    /* PRODUCTO*/
+    #product > div{
+        justify-content: space-around;
+        flex-direction: column;
+        align-content: center;
+    }
+    
+}
+
 
 /* TABLET */
 @media (max-width: 768px) {
