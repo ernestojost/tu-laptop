@@ -7,7 +7,7 @@
     <div class="d-flex justify-content-between py-4">
         <div id="company">
             <p class="text-uppercase font-weight-bold title-footer">Empresa</p>
-            <a class="text-decoration-none text-dark" href="#">Contacto</a>
+            <a class="text-decoration-none text-dark" href="contacto.php">Contacto</a>
         </div>
         <div id="social">
             <p class="text-uppercase font-weight-bold title-footer">Social</p>

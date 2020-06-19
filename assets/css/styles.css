@@ -45,6 +45,10 @@
     cursor: pointer !important;
 }
 
+#principal-content{
+    min-height: 500px;
+}
+
 
 
 
@@ -64,18 +68,29 @@
 }
 
 #button-search{
+    width: 50px;
+    height: 38px;
     outline: none;
-    background: linear-gradient(to bottom right, rgba(70,26,126,1), rgba(5,151,188,1));
+    background: url(../img/search.svg), linear-gradient(to bottom right, rgba(70,26,126,1), rgba(5,151,188,1));
+    background-size: 20px, auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 0px;
 }
 
 #button-search:hover{
-    background: #571f87;
+    background: url(../img/search.svg), #571f87;
+    background-size: 20px, auto;
+    background-repeat: no-repeat;
+    background-position: center;
     transition: none;
 }
 
 #button-search:focus{
-    background: #571f87;
-    border: 1px solid #571f87;
+    background: url(../img/search.svg), #571f87;
+    background-size: 20px, auto;
+    background-repeat: no-repeat;
+    background-position: center;
     box-shadow: none;
 }
 
@@ -305,29 +320,34 @@ footer .payment-methods-size{
 
 
 
-/* CATEGORIA */
-#category-name{
+/* CATEGORIA Y BUSCAR */
+#category-name,
+#search-name{
     font-size: 16px !important;
     font-weight: bold;
     color: #571f87;
 }
 
-#category > div{
+#category > div,
+#search > div{
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
-#category a{
+#category a,
+#search a{
     width: 200px;
     padding: 8px;
 }
 
-#category a img{
+#category a img,
+#search a img{
     max-width: 200px;
     height: 180px;
 }
 
-#category a > p{
+#category a > p,
+#search a > p{
     height: 43px;
     margin-top: 5px;
     font-size: 14px;
@@ -335,19 +355,22 @@ footer .payment-methods-size{
     overflow: hidden;
 }
 
-#category a .prices{
+#category a .prices,
+#search a .prices{
     height: 55px;
     text-align: center;
 }
 
-#category a .normal-price{
+#category a .normal-price,
+#search a .normal-price{
     margin-bottom: 0px;
     color: #571f87;
     font-weight: bold;
     font-size: 14px !important;
 }
 
-#category a .old-price{
+#category a .old-price,
+#search a .old-price{
     font-size: 12px;
     margin-bottom: 16px;
     font-weight: bold;
@@ -446,18 +469,26 @@ footer .payment-methods-size{
 
 
 
+/* BUSCAR */
+
+
+
+
+
+
+
 
 
 
 
 /* RESPONSIVE */
 @media (max-width: 1280px){
-    
+
     /* CABECERA */
     #text-search{
         width: 280px !important;
     }
-    
+
 }
 
 @media (max-width: 1024px){
@@ -467,13 +498,13 @@ footer .payment-methods-size{
         margin: 0px !important;
         padding: 0px;
     }
-    
+
     #carouselHome-content{
         max-width: 100%;
         padding-right: 0px;
         padding-left: 0px;
     }
-    
+
     #text-search,
     #button-search{
         display: none;
@@ -487,99 +518,103 @@ footer .payment-methods-size{
     #shop span{
         display: none;
     }
-    
+
     header{
         max-width: 100% !important;
     }
-    
+
     /* PRODUCTO */
     #product img{
         width: 350px;
     }
-    
+
 }
 
 
 @media (max-width: 820px) {
-    
+
     /* PRODUCTO*/
     #product > div{
         justify-content: space-around;
         flex-direction: column;
         align-content: center;
     }
-    
+
     #product img{
         margin-left: auto;
         margin-right: auto;
     }
-    
+
     #product #product-name{
         text-align: center
     }
-    
+
     #product #product-price,
     #product #shop-buttons{
         justify-content: center;
     }
-    
+
 }
 
 
 /* TABLET */
 @media (max-width: 768px) {
     
+    #principal-content{
+        min-height: 400px;
+    }
+
     #carousel-featured .carousel-item > div,
     #carousel-offers .carousel-item > div,
     #carousel-news .carousel-item > div{
         flex-wrap: wrap !important;
     }
-    
+
     #carousel-featured .carousel-item a,
     #carousel-offers .carousel-item a,
     #carousel-news .carousel-item a{
         width: 50% !important;
     }
-    
+
     /* FOOTER */
     footer > div{
         flex-direction: column !important;
     }
-    
+
     footer #company{
         display: none;
     }
-    
+
     footer #social{
         margin-bottom: 20px;
     }
-    
+
     footer #social,
     footer #payment-methods{
         text-align: center;
     }
-    
+
     footer #social p,
     footer #payment-methods p{
         display: none;
     }
-    
+
 }
 
 @media (max-width: 575px) {
-    
+
     /* PRODUCTOS DESTACADOS */
     #featured-products-content,
     #offers-products-content,
     #news-products-content{
         margin-top: 20px !important;
     }
-    
+
     /* CONTENIDO PRINCIPAL */
     #principal-content{
         padding-bottom: 20px !important;
     }
-    
+
 }
 
 @media (max-width: 378px) {

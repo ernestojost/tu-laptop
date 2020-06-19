@@ -78,7 +78,7 @@ function conseguirProductos($conexion, $limit = null, $categoria = null, $busque
     }
 
     if (!empty($busqueda)) {
-        $sql .= "WHERE p.titulo LIKE '%$busqueda%' ";
+        $sql .= "WHERE p.nombre LIKE '%$busqueda%' ";
     }
 
     $sql .= "ORDER BY p.id DESC ";

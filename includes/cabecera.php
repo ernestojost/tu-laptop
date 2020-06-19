@@ -24,11 +24,9 @@
                         <img src="assets/img/logo.webp" height="40" alt="Logo" loading="lazy">
                     </a>
                     <div>
-                        <form class="form-inline d-inline">
-                            <input id="text-search" class="form-control rounded-0" type="search" placeholder="Buscar productos..." aria-label="Search" spellcheck="false">
-                            <button id="button-search" class="btn rounded-0" type="submit">
-                                <img src="./assets/img/search.svg" alt="Search" height="22" width="18"/>
-                            </button>
+                        <form class="form-inline d-inline" action="buscar.php" method="POST">
+                            <input id="text-search" class="form-control rounded-0" placeholder="Buscar productos..." type="text" name="busqueda" required/>
+                            <input id="button-search" class="btn rounded-0" type="submit" value=""/>
                         </form>
                         <button id="account" class="nav-link d-inline align-middle border-0 bg-transparent" type="button" onmouseover="changeIconHover('account')" onmouseout="changeIconNormal('account')" onclick="changeVisibilityLogin(true)">
                             <img id="imgAccount" src="./assets/img/accountNormal.svg"/>

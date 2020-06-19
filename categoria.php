@@ -14,6 +14,7 @@ if (!isset($categoria_actual['id'])) {
 <div id="principal-content" class="bg-light pb-5 pt-5">
     <div id="category" class="container mx-auto p-2">
         <h1 id="category-name" class="text-uppercase"><?= $categoria_actual['nombre'] ?></h1>
+        <hr>
         <div class="d-flex">
             <?php
             $productos = conseguirProductos($db);
