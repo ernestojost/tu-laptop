@@ -32,16 +32,20 @@ window.addEventListener('load', () => {
     document.getElementById("closeCreateAccount").addEventListener("click", function () {
         document.getElementById('create-account-form').style.setProperty('display', 'none', 'important');
         document.getElementById('login-form').style.setProperty('display', 'block', 'important');
-        document.getElementById('name-create-account').value = "";
-        document.getElementById('surname-create-account').value = "";
-        document.getElementById('email-create-account').value = "";
-        document.getElementById('password-create-account').value = "";
+        document.getElementById('nombre').value = "";
+        document.getElementById('apellidos').value = "";
+        document.getElementById('email').value = "";
+        document.getElementById('password').value = "";
     }, false);
 
 
     // Login Ingresar
     document.getElementById("login-enter").addEventListener("click", function(){
-        console.log("1");
+        var email = document.getElementById("email-login").value;
+        var password = document.getElementById("password-login").value;
+        if(email.indexOf('@') > -1){
+            
+        }
     }, false);
     
 
@@ -70,10 +74,10 @@ function changeVisibilityLogin(bool) {
         if(document.getElementById('login-form').style.display == "none"){
             document.getElementById('login-form').style.setProperty('display', 'block', 'important');
             document.getElementById('create-account-form').style.setProperty('display', 'none', 'important');
-            document.getElementById('name-create-account').value = "";
-            document.getElementById('surname-create-account').value = "";
-            document.getElementById('email-create-account').value = "";
-            document.getElementById('password-create-account').value = "";
+            document.getElementById('nombre').value = "";
+            document.getElementById('apellidos').value = "";
+            document.getElementById('email').value = "";
+            document.getElementById('password').value = "";
         }else{
             document.getElementById('email-login').value = "";
             document.getElementById('password-login').value = "";

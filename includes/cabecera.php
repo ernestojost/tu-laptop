@@ -30,7 +30,11 @@
                         </form>
                         <button id="account" class="nav-link d-inline align-middle border-0 bg-transparent" type="button" onmouseover="changeIconHover('account')" onmouseout="changeIconNormal('account')" onclick="changeVisibilityLogin(true)">
                             <img id="imgAccount" src="./assets/img/accountNormal.svg"/>
-                            <span>Mi cuenta</span>
+                            <?php if(isset($_SESSION['usuario'])): ?>
+                                <span><?=$_SESSION['usuario']['nombre'];?></span>
+                            <?php else: ?>
+                                <span>Mi cuenta</span>
+                            <?php endif; ?>
                         </button>
                         <a id="shop" class="nav-link d-inline align-middle" href="#" onmouseover="changeIconHover('shop')" onmouseout="changeIconNormal('shop')" onclick="changeVisibilityShoppingCart(true)">
                             <img id="imgShop" src="./assets/img/shopNormal.svg"/>

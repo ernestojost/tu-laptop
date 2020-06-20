@@ -3,7 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/opt/lampp/htdocs/tu-laptop/producto.php</file>
+            <file>file:/opt/lampp/htdocs/tu-laptop/includes/usuario.php</file>
+            <file>file:/opt/lampp/htdocs/tu-laptop/includes/cabecera.php</file>
+            <file>file:/opt/lampp/htdocs/tu-laptop/login.php</file>
+            <file>file:/opt/lampp/htdocs/tu-laptop/assets/js/index.js</file>
         </group>
     </open-files>
 </project-private>

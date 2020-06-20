@@ -469,8 +469,12 @@ footer .payment-methods-size{
 
 
 
-/* BUSCAR */
-
+/* MIS DATOS */
+#mis-datos-title{
+    font-size: 16px !important;
+    font-weight: bold;
+    color: #571f87;
+}
 
 
 
@@ -546,6 +550,7 @@ footer .payment-methods-size{
     }
 
     #product #product-name{
+        margin-top: 10px;
         text-align: center
     }
 
