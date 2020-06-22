@@ -137,3 +137,11 @@ CONSTRAINT fk_linea_producto FOREIGN KEY(producto_id) REFERENCES productos(id)
 2. Ir a "Mi cuenta"
 3. Ir a "Crear Categorias"
 4. Rellenar los campos y dar en "Guardar"
+
+
+## Gestionar pedidos
+Falta realizar...
+
+
+## Agregar productos al carrito
+Falta realizar...
