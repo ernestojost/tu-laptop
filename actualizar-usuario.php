@@ -9,6 +9,7 @@ if (isset($_POST)) {
     $nombre = isset($_POST['nombre']) ? mysqli_real_escape_string($db, $_POST['nombre']) : false;
     $apellidos = isset($_POST['apellidos']) ? mysqli_real_escape_string($db, $_POST['apellidos']) : false;
     $email = isset($_POST['email']) ? mysqli_real_escape_string($db, trim($_POST['email'])) : false;
+    $rol = isset($_POST['rol']) ? strtolower(mysqli_real_escape_string($db, trim($_POST['rol']))) : false;
 
     // Array de errores
     $errores = array();
@@ -27,7 +28,7 @@ if (isset($_POST)) {
         $apellidos_validado = true;
     } else {
         $apellidos_validado = false;
-        $errores['apellidos'] = "Los apellidos no son válido";
+        $errores['apellidos'] = "Los apellidos no son válidos";
     }
 
     // Validar el email
@@ -55,7 +56,8 @@ if (isset($_POST)) {
             $sql = "UPDATE usuarios SET " .
                     "nombre = '$nombre', " .
                     "apellidos = '$apellidos', " .
-                    "email = '$email' " .
+                    "email = '$email', " .
+                    "rol = '$rol' " .
                     "WHERE id = " . $usuario['id'];
             $guardar = mysqli_query($db, $sql);
 
@@ -64,6 +66,7 @@ if (isset($_POST)) {
                 $_SESSION['usuario']['nombre'] = $nombre;
                 $_SESSION['usuario']['apellidos'] = $apellidos;
                 $_SESSION['usuario']['email'] = $email;
+                $_SESSION['usuario']['rol'] = $rol;
 
                 $_SESSION['completado'] = "Tus datos se han actualizado con éxito";
             } else {

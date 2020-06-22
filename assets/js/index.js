@@ -21,33 +21,39 @@ window.addEventListener('load', () => {
 
 
     // Abrir crear cuenta
-    document.getElementById("openCreateAccount").addEventListener("click", function () {
-        document.getElementById('login-form').style.setProperty('display', 'none', 'important');
-        document.getElementById('create-account-form').style.setProperty('display', 'block', 'important');
-        document.getElementById('email-login').value = "";
-        document.getElementById('password-login').value = "";
-    }, false);
-    
+    if (document.getElementById("openCreateAccount") != null) {
+        document.getElementById("openCreateAccount").addEventListener("click", function () {
+            document.getElementById('login-form').style.setProperty('display', 'none', 'important');
+            document.getElementById('create-account-form').style.setProperty('display', 'block', 'important');
+            document.getElementById('email-login').value = "";
+            document.getElementById('password-login').value = "";
+        }, false);
+    }
+
     // Cerrar crear cuenta
-    document.getElementById("closeCreateAccount").addEventListener("click", function () {
-        document.getElementById('create-account-form').style.setProperty('display', 'none', 'important');
-        document.getElementById('login-form').style.setProperty('display', 'block', 'important');
-        document.getElementById('nombre').value = "";
-        document.getElementById('apellidos').value = "";
-        document.getElementById('email').value = "";
-        document.getElementById('password').value = "";
-    }, false);
+    if (document.getElementById("closeCreateAccount") != null) {
+        document.getElementById("closeCreateAccount").addEventListener("click", function () {
+            document.getElementById('create-account-form').style.setProperty('display', 'none', 'important');
+            document.getElementById('login-form').style.setProperty('display', 'block', 'important');
+            document.getElementById('nombre').value = "";
+            document.getElementById('apellidos').value = "";
+            document.getElementById('email').value = "";
+            document.getElementById('password').value = "";
+        }, false);
+    }
 
 
     // Login Ingresar
-    document.getElementById("login-enter").addEventListener("click", function(){
-        var email = document.getElementById("email-login").value;
-        var password = document.getElementById("password-login").value;
-        if(email.indexOf('@') > -1){
-            
-        }
-    }, false);
-    
+    if (document.getElementById("login-enter") != null) {
+        document.getElementById("login-enter").addEventListener("click", function () {
+            var email = document.getElementById("email-login").value;
+            var password = document.getElementById("password-login").value;
+            if (email.indexOf('@') > -1) {
+
+            }
+        }, false);
+    }
+
 
 });
 
@@ -71,14 +77,14 @@ function changeVisibilityLogin(bool) {
         enableScroll();
         document.getElementById('login-account').style.setProperty('display', 'none', 'important');
         document.getElementsByTagName("html")[0].style.overflow = "auto";  // Habilitar barra scroll
-        if(document.getElementById('login-form').style.display == "none"){
+        if (document.getElementById('login-form').style.display == "none") {
             document.getElementById('login-form').style.setProperty('display', 'block', 'important');
             document.getElementById('create-account-form').style.setProperty('display', 'none', 'important');
             document.getElementById('nombre').value = "";
             document.getElementById('apellidos').value = "";
             document.getElementById('email').value = "";
             document.getElementById('password').value = "";
-        }else{
+        } else {
             document.getElementById('email-login').value = "";
             document.getElementById('password-login').value = "";
         }
@@ -147,6 +153,17 @@ function enableScroll() {
 
 
 /* PRODUCTO */
-function changeQuantity(quantity){
+function changeQuantity(quantity) {
     document.getElementById("quantity").innerHTML = quantity;
+}
+
+/* CREAR PRODUCTOS */
+function changeVisibilityPriceOffer() {
+    var valor = document.getElementById("oferta").value;
+    if (valor == "Si") {
+        document.getElementById("precio_oferta-content").style.setProperty('display', 'block', 'important');
+    } else {
+        document.getElementById("precio_oferta").value = "0.00";
+        document.getElementById("precio_oferta-content").style.setProperty('display', 'none', 'important');
+    }
 }

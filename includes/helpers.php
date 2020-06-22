@@ -3,7 +3,7 @@
 function mostrarError($errores, $campo) {
     $alerta = '';
     if (isset($errores[$campo]) && !empty($campo)) {
-        $alerta = "<div class='alerta alerta-error'>" . $errores[$campo] . '</div>';
+        $alerta = "<div class='alert alert-danger'>" . $errores[$campo] . '</div>';
     }
 
     return $alerta;
@@ -17,8 +17,13 @@ function borrarErrores() {
         $borrado = true;
     }
 
-    if (isset($_SESSION['errores_entrada'])) {
-        $_SESSION['errores_entrada'] = null;
+    if (isset($_SESSION['errores_producto'])) {
+        $_SESSION['errores_producto'] = null;
+        $borrado = true;
+    }
+    
+    if (isset($_SESSION['errores_categoria'])) {
+        $_SESSION['errores_categoria'] = null;
         $borrado = true;
     }
 
