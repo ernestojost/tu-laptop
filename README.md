@@ -7,6 +7,7 @@ Tu Laptop es una página web de ejemplo basada en la página [zonalaptop.com.uy]
 * HTML
 * CSS
 * Bootstrap
+* Responsive Web Design
 * Javascript
 * PHP
 * SQL
