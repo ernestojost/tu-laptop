@@ -38,20 +38,21 @@ if (!isset($producto_actual['id'])) {
                             <p id="quantity" class="float-left m-0 text-dark mr-2">1</p>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" onclick="changeQuantity(1)">1</a>
-                            <a class="dropdown-item" onclick="changeQuantity(2)">2</a>
-                            <a class="dropdown-item" onclick="changeQuantity(3)">3</a>
-                            <a class="dropdown-item" onclick="changeQuantity(4)">4</a>
-                            <a class="dropdown-item" onclick="changeQuantity(5)">5</a>
-                            <a class="dropdown-item" onclick="changeQuantity(6)">6</a>
-                            <a class="dropdown-item" onclick="changeQuantity(7)">7</a>
-                            <a class="dropdown-item" onclick="changeQuantity(8)">8</a>
-                            <a class="dropdown-item" onclick="changeQuantity(9)">9</a>
-                            <a class="dropdown-item" onclick="changeQuantity(10)">10</a>
+                            <?php
+                            $contadorStock = 1;
+                            while (($contadorStock <= $producto_actual['stock']) && ($contadorStock <= 10)):
+                                ?>
+                                <a class="dropdown-item" onclick="changeQuantity(<?= $contadorStock ?>,<?= $producto_actual['id'] ?>)"><?= $contadorStock ?></a>
+                                <?php
+                                $contadorStock++;
+                            endwhile;
+                            ?>
                         </div>
                     </div>
-                    <button id="product-buy" class="float-left font-weight-bold px-5 py-3"><span class="font-family-websymbols mr-2">,</span>COMPRAR</button>
+                    <a id="product-buy" class="float-left font-weight-bold px-5 py-3 text-decoration-none" href="agregar-carrito.php?id=<?= $producto_actual['id'] ?>&cant=1"><span class="font-family-websymbols mr-2">,</span>COMPRAR</a>
                 </div>
+                <br>
+                <?php echo isset($_SESSION['errores_comprar']) ? mostrarError($_SESSION['errores_comprar'], 'comprar') : ''; ?>
             </div>
         </div>
         <div id="featured" class="mt-5">

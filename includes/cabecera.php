@@ -30,15 +30,26 @@
                         </form>
                         <button id="account" class="nav-link d-inline align-middle border-0 bg-transparent" type="button" onmouseover="changeIconHover('account')" onmouseout="changeIconNormal('account')" onclick="changeVisibilityLogin(true)">
                             <img id="imgAccount" src="./assets/img/accountNormal.svg"/>
-                            <?php if(isset($_SESSION['usuario'])): ?>
-                                <span><?=$_SESSION['usuario']['nombre'];?></span>
+                            <?php if (isset($_SESSION['usuario'])): ?>
+                                <span><?= $_SESSION['usuario']['nombre']; ?></span>
                             <?php else: ?>
                                 <span>Mi cuenta</span>
                             <?php endif; ?>
                         </button>
-                        <a id="shop" class="nav-link d-inline align-middle" href="#" onmouseover="changeIconHover('shop')" onmouseout="changeIconNormal('shop')" onclick="changeVisibilityShoppingCart(true)">
+                        <a id="shop" class="nav-link d-inline align-middle" href="carrito.php" onmouseover="changeIconHover('shop')" onmouseout="changeIconNormal('shop')" onclick="changeVisibilityShoppingCart(true)">
                             <img id="imgShop" src="./assets/img/shopNormal.svg"/>
-                            <span><strong>USD 0,00</strong></span>
+                            <?php
+                            $precio_total = 0.00;
+                            foreach ($_SESSION['carrito'] as $indice) :
+                                $producto = conseguirProducto($db, $indice['id_producto']);
+                                if ($producto['precio_oferta'] == "0.00"):
+                                    $precio_total += ($producto['precio'] * $indice['unidades']);
+                                else:
+                                    $precio_total += ($producto['precio_oferta'] * $indice['unidades']);
+                                endif;
+                            endforeach;
+                            ?>
+                            <span><strong>USD <?= $precio_total ?></strong></span>
                         </a>
                     </div>
                 </nav>

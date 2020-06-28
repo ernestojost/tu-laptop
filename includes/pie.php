@@ -1,5 +1,4 @@
 <?php require_once 'usuario.php'; ?>
-<?php require_once 'carrito.php'; ?>
 
 <!-- PIE DE PÁGINA -->
 <hr class="m-0"/>

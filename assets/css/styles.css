@@ -288,30 +288,6 @@ footer .payment-methods-size{
 
 
 
-/* SHOPPING CART */
-#shopping-cart{
-    display: none !important;
-    top: 0px;
-    left: 0px;
-    height: 485px;
-    background: rgba(0,0,0,0.3);
-    align-items: center;
-    justify-content: center;
-}
-
-#shopping-cart-content{
-    padding: 25px;
-    width: 400px;
-}
-
-#shopping-cart-close{
-    margin-top: -18px;
-    margin-right: -18px;
-}
-
-
-
-
 
 
 
@@ -567,6 +543,67 @@ footer .payment-methods-size{
     box-shadow: none;
 }
 
+
+
+
+
+
+
+/* CARRITO */
+#carrito #carrito-title{
+    color: #571f87;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#carrito .img_carrito{
+    height: 100px;
+}
+
+#carrito #pedidos-anteriores-title{
+    color: #571f87;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+/* DIRECCION */
+#address #address-title{
+    color: #571f87;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#address form{
+    width: 400px;
+}
+
+#address-enter{
+    outline: none;
+    background: linear-gradient(to bottom right, rgba(70,26,126,1), rgba(5,151,188,1));
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 0px;
+}
+
+#address-enter:hover{
+    background: #571f87;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: none;
+}
+
+#address-enter:focus{
+    background: #571f87;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: none;
+}
 
 
 

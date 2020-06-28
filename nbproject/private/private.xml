@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/opt/lampp/htdocs/tu-laptop/includes/usuario.php</file>
+            <file>file:/opt/lampp/htdocs/tu-laptop/quitar-carrito.php</file>
             <file>file:/opt/lampp/htdocs/tu-laptop/includes/helpers.php</file>
-            <file>file:/opt/lampp/htdocs/tu-laptop/actualizar-usuario.php</file>
-            <file>file:/opt/lampp/htdocs/tu-laptop/mis-datos.php</file>
-            <file>file:/opt/lampp/htdocs/tu-laptop/login.php</file>
+            <file>file:/opt/lampp/htdocs/tu-laptop/producto.php</file>
+            <file>file:/opt/lampp/htdocs/tu-laptop/agregar-carrito.php</file>
+            <file>file:/opt/lampp/htdocs/tu-laptop/carrito.php</file>
+            <file>file:/opt/lampp/htdocs/tu-laptop/vaciar-carrito.php</file>
         </group>
     </open-files>
 </project-private>

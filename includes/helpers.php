@@ -26,6 +26,16 @@ function borrarErrores() {
         $_SESSION['errores_categoria'] = null;
         $borrado = true;
     }
+    
+    if (isset($_SESSION['errores_comprar'])) {
+        $_SESSION['errores_comprar'] = null;
+        $borrado = true;
+    }
+    
+    if (isset($_SESSION['errores_address'])) {
+        $_SESSION['errores_address'] = null;
+        $borrado = true;
+    }
 
     if (isset($_SESSION['completado'])) {
         $_SESSION['completado'] = null;
@@ -101,4 +111,52 @@ function conseguirProductos($conexion, $limit = null, $categoria = null, $busque
     }
 
     return $resultado;
+}
+
+function conseguirPedidosUsuario($conexion, $usuario_id) {
+    $sql = "SELECT * FROM pedidos WHERE usuario_id = $usuario_id ORDER BY id DESC;";
+
+    $productos = mysqli_query($conexion, $sql);
+
+    $resultado = array();
+    if ($productos && mysqli_num_rows($productos) >= 1) {
+        $resultado = $productos;
+    }
+
+    return $resultado;
+}
+/*
+function conseguirProductosPedido($conexion, $pedido_id) {
+    $sql = "SELECT p.* FROM productos p " .
+             "INNER JOIN lineas_pedidos lp ON p.id = lp.id AND lp.pedido_id = $pedido_id;";
+
+    $productos = mysqli_query($conexion, $sql);
+
+    $resultado = array();
+    if ($productos && mysqli_num_rows($productos) >= 1) {
+        $resultado = $productos;
+    }
+
+    return $resultado;
+}*/
+
+function conseguirIdUltimoPedido($conexion, $usuario_id){
+    $sql = "SELECT MAX(p.id) AS 'id' FROM pedidos p WHERE p.usuario_id = $usuario_id;";
+    
+    $id = mysqli_query($conexion, $sql);
+    
+    return mysqli_fetch_assoc($id);
+}
+
+function agregarPedido($conexion, $usuario_id, $producto_id, $unidades, $departamento, $direccion, $coste) {
+
+    $sql1 = "INSERT INTO pedidos VALUES(null, $usuario_id, '$departamento', '$direccion', '$coste', 'pendiente', CURRENT_DATE(), CURRENT_TIME());";
+    
+    mysqli_query($conexion, $sql1);
+    
+    $pedido_id = (conseguirIdUltimoPedido($conexion, $usuario_id))['id'];
+    
+    $sql2 = "INSERT INTO lineas_pedidos VALUES(null, $pedido_id, $producto_id, '$unidades');";
+    
+    mysqli_query($conexion, $sql2);
 }

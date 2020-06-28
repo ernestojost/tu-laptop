@@ -43,18 +43,6 @@ window.addEventListener('load', () => {
     }
 
 
-    // Login Ingresar
-    if (document.getElementById("login-enter") != null) {
-        document.getElementById("login-enter").addEventListener("click", function () {
-            var email = document.getElementById("email-login").value;
-            var password = document.getElementById("password-login").value;
-            if (email.indexOf('@') > -1) {
-
-            }
-        }, false);
-    }
-
-
 });
 
 // Funciones para cuando pasa el ratón por encima de Cuenta y Carrito
@@ -88,20 +76,6 @@ function changeVisibilityLogin(bool) {
             document.getElementById('email-login').value = "";
             document.getElementById('password-login').value = "";
         }
-    }
-}
-
-
-// CAMBIAR VISIBILIDAD LOGIN
-function changeVisibilityShoppingCart(bool) {
-    if (bool) {
-        disableScroll();
-        document.getElementById('shopping-cart').style.setProperty('display', 'flex', 'important');
-        document.getElementsByTagName("html")[0].style.overflow = "hidden";  // Deshabilitar barra scroll
-    } else {
-        enableScroll();
-        document.getElementById('shopping-cart').style.setProperty('display', 'none', 'important');
-        document.getElementsByTagName("html")[0].style.overflow = "auto";  // Habilitar barra scroll
     }
 }
 
@@ -153,8 +127,9 @@ function enableScroll() {
 
 
 /* PRODUCTO */
-function changeQuantity(quantity) {
+function changeQuantity(quantity,id) {
     document.getElementById("quantity").innerHTML = quantity;
+    document.getElementById("product-buy").href = "agregar-carrito.php?id="+id+"&cant="+quantity;
 }
 
 /* CREAR PRODUCTOS */
