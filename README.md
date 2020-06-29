@@ -140,9 +140,16 @@ CONSTRAINT fk_linea_producto FOREIGN KEY(producto_id) REFERENCES productos(id)
 4. Rellenar los campos y dar en "Guardar"
 
 
-## Gestionar pedidos
-Falta realizar...
-
-
 ## Agregar productos al carrito
+1. Iniciar sesion
+2. Buscar el producto que quieras agregar
+3. Seleccionar la cantidad que se desea agregar y dar click en "Comprar"
+
+
+## Realizar pedido
+1. Ir al carrito de compras y dar click en "Hacer pedido"
+2. Rellenar los campos y dar click en "Enviar"
+
+
+## Gestionar pedidos
 Falta realizar...
