@@ -566,6 +566,20 @@ footer .payment-methods-size{
     font-weight: bold;
 }
 
+#pedidos-clientes #pedidos-clientes-title{
+    color: #571f87;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#pedidos-clientes .img_carrito{
+    height: 100px;
+}
+
+#pedidos-clientes .dropdown button{
+    padding-right: 20px;
+}
+
 
 
 

@@ -2,10 +2,11 @@
 
 function mostrarError($errores, $campo) {
     $alerta = '';
+    
     if (isset($errores[$campo]) && !empty($campo)) {
         $alerta = "<div class='alert alert-danger'>" . $errores[$campo] . '</div>';
     }
-
+    
     return $alerta;
 }
 
@@ -34,6 +35,11 @@ function borrarErrores() {
     
     if (isset($_SESSION['errores_address'])) {
         $_SESSION['errores_address'] = null;
+        $borrado = true;
+    }
+    
+    if (isset($_SESSION['errores_guardar_pedido'])) {
+        $_SESSION['errores_guardar_pedido'] = null;
         $borrado = true;
     }
 
@@ -69,11 +75,11 @@ function conseguirCategoria($conexion, $id) {
     return $resultado;
 }
 
-function conseguirProducto($conexion, $id) {
+function conseguirProducto($conexion, $producto_id) {
     $sql = "SELECT p.*, c.nombre AS 'categoria' ". 
             "FROM productos p " .
             "INNER JOIN categorias c ON p.categoria_id = c.id " .
-            "WHERE p.id = $id;";
+            "WHERE p.id = $producto_id;";
     $producto = mysqli_query($conexion, $sql);
 
     $resultado = array();
@@ -150,7 +156,7 @@ function conseguirIdUltimoPedido($conexion, $usuario_id){
 
 function agregarPedido($conexion, $usuario_id, $producto_id, $unidades, $departamento, $direccion, $coste) {
 
-    $sql1 = "INSERT INTO pedidos VALUES(null, $usuario_id, '$departamento', '$direccion', '$coste', 'pendiente', CURRENT_DATE(), CURRENT_TIME());";
+    $sql1 = "INSERT INTO pedidos VALUES(null, $usuario_id, '$departamento', '$direccion', '$coste', 'pending', CURRENT_DATE(), CURRENT_TIME());";
     
     mysqli_query($conexion, $sql1);
     
@@ -159,4 +165,59 @@ function agregarPedido($conexion, $usuario_id, $producto_id, $unidades, $departa
     $sql2 = "INSERT INTO lineas_pedidos VALUES(null, $pedido_id, $producto_id, '$unidades');";
     
     mysqli_query($conexion, $sql2);
+}
+
+function conseguirTodosPedidos($conexion) {
+    
+    $sql = "SELECT * FROM pedidos ORDER BY id DESC;";
+
+    $pedidos = mysqli_query($conexion, $sql);
+
+    $resultado = array();
+    if ($pedidos && mysqli_num_rows($pedidos) >= 1) {
+        $resultado = $pedidos;
+    }
+
+    return $resultado;
+    
+}
+
+function conseguirProductoDesdeIdPedido($conexion, $pedido_id) {
+    $sql = "SELECT pr.*, lp.unidades AS 'unidades' FROM productos pr " . 
+        "INNER JOIN lineas_pedidos lp ON lp.pedido_id = $pedido_id AND pr.id = lp.producto_id " .
+        "INNER JOIN pedidos pe ON pe.id = $pedido_id;";
+   
+    $producto = mysqli_query($conexion, $sql);
+
+    $resultado = array();
+    if ($producto && mysqli_num_rows($producto) >= 1) {
+        $resultado = mysqli_fetch_assoc($producto);
+    }
+
+    return $resultado;
+}
+
+function cambiarEstadoPedido($conexion, $pedido_id, $estado){
+    $sql = "UPDATE pedidos SET estado = '$estado' WHERE id = $pedido_id;";
+    
+    mysqli_query($conexion, $sql);
+}
+
+function quitarUnidadesDelStock($conexion, $stock, $producto_id){
+    $sql = "UPDATE productos SET stock = $stock WHERE id = $producto_id;";
+    
+    mysqli_query($conexion, $sql);
+}
+
+function conseguirPedidoDesdeId($conexion, $pedido_id){
+    $sql = "SELECT * FROM pedidos WHERE id = $pedido_id";
+    
+    $pedido = mysqli_query($conexion, $sql);
+
+    $resultado = array();
+    if ($pedido && mysqli_num_rows($pedido) >= 1) {
+        $resultado = mysqli_fetch_assoc($pedido);
+    }
+
+    return $resultado;
 }

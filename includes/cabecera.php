@@ -39,17 +39,27 @@
                         <a id="shop" class="nav-link d-inline align-middle" href="carrito.php" onmouseover="changeIconHover('shop')" onmouseout="changeIconNormal('shop')" onclick="changeVisibilityShoppingCart(true)">
                             <img id="imgShop" src="./assets/img/shopNormal.svg"/>
                             <?php
-                            $precio_total = 0.00;
-                            foreach ($_SESSION['carrito'] as $indice) :
-                                $producto = conseguirProducto($db, $indice['id_producto']);
-                                if ($producto['precio_oferta'] == "0.00"):
-                                    $precio_total += ($producto['precio'] * $indice['unidades']);
-                                else:
-                                    $precio_total += ($producto['precio_oferta'] * $indice['unidades']);
-                                endif;
-                            endforeach;
+                            $precio_total = 0;
+                            if (isset($_SESSION['carrito'])) {
+                                foreach ($_SESSION['carrito'] as $indice) {
+                                    $producto = conseguirProducto($db, $indice['id_producto']);
+                                    if ($producto['precio_oferta'] == "0.00"):
+                                        $precio_total += ($producto['precio'] * $indice['unidades']);
+                                    else:
+                                        $precio_total += ($producto['precio_oferta'] * $indice['unidades']);
+                                    endif;
+                                }
+                            }
                             ?>
-                            <span><strong>USD <?= $precio_total ?></strong></span>
+                            <span><strong>
+                                <?php if(isset($_SESSION['usuario']))
+                                { 
+                                    if($_SESSION['usuario']['rol'] != "admin"){ 
+                                        echo 'USD '.$precio_total; 
+                                    }
+                                } 
+                                ?>
+                            </strong></span>
                         </a>
                     </div>
                 </nav>
