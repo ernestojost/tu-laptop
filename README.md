@@ -152,4 +152,7 @@ CONSTRAINT fk_linea_producto FOREIGN KEY(producto_id) REFERENCES productos(id)
 
 
 ## Gestionar pedidos
-Falta realizar...
+1. Tener la cuenta como administrador
+2. Ir al icono de carrito (arriba a la derecha)
+3. Realizar cambios a los pedidos de los clientes
+4. Guardar
